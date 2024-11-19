@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @layer utilities {
+    .header-link {
+      @apply relative hover:text-red cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-red before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-red after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]
+    }
+  
+    .anim3 {
+      @apply transition-all duration-300
+    }
+  
+    .anim1 {
+      @apply transition-all duration-100
+    }
+  
+    .anim {
+      @apply transition-all duration-1000
+    }
+  
+    .anim5 {
+      @apply transition-all duration-500
+    }
+  
+    .anim7 {
+      @apply transition-all duration-700
+    }
+    .abs-center{
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    }
+  
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .animated-word {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
